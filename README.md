@@ -26,28 +26,22 @@ A dynamic game showcase website with a React frontend and Node.js + Express back
 ## 📂 Project Structure
 
 game-website/
-│
-├── client/ # React frontend (Coming soon)
-├── server/ # Node.js backend
-│ ├── routes/ # API routes
-│ ├── models/ # MongoDB models (Mongoose)
-│ ├── .env # Environment variables (not tracked)
-│
-├── .gitignore
-├── LICENSE
-├── README.md
+    client/ # React frontend (Coming soon)
+    server/ # Node.js backend
+        routes/ # API routes
+        models/ # MongoDB models (Mongoose)
+        .env # Environment variables (not tracked)
+    .gitignore
+    LICENSE
+    README.md
 
 ---
 
 ## 🚀 Getting Started
 
-### 1️⃣ Clone the repository
-    git clone https://github.com/<your-username>/game-website.git
-    cd game-website
+1️⃣ Clone the repository
 
 2️⃣ Install backend dependencies
-    cd server
-    npm install
 
 3️⃣ Configure environment variables
 
@@ -56,7 +50,8 @@ game-website/
 ---
 
 📖 API Endpoints
-Method	Endpoint	    Description
+
+Method  Endpoint        Description
 GET	    /api/games	    Fetch all games
 POST	/api/games	    Add a new game
 PATCH	/api/games/:id	Update a game by ID
