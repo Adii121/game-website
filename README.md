@@ -48,11 +48,3 @@ game-website/
 4️⃣ Start the backend server
 
 ---
-
-📖 API Endpoints
-
-Method  Endpoint        Description
-GET	    /api/games	    Fetch all games
-POST	/api/games	    Add a new game
-PATCH	/api/games/:id	Update a game by ID
-DELETE	/api/games/:id	Delete a game by ID
