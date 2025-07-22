@@ -55,4 +55,6 @@ GET /api/games
 
 POST /api/games
 
+PATCH /api/games/:id
+
 DELETE /api/games/:id
