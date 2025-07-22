@@ -50,6 +50,7 @@ game-website/
 ---
 
 📡 API
+
 GET /api/games
 
 POST /api/games
