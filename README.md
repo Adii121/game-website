@@ -48,3 +48,10 @@ game-website/
 4️⃣ Start the backend server
 
 ---
+
+📡 API
+GET /api/games
+
+POST /api/games
+
+DELETE /api/games/:id

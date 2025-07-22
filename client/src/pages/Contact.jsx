@@ -9,13 +9,13 @@ export default function Contact() {
         <h1 className="text-4xl font-bold mb-6">📞 Contact Me</h1>
         <div className="space-y-4 text-lg">
           <p>
-            📧 Email: <a href="mailto:youremail@example.com" className="text-yellow-400">youremail@example.com</a>
+            📧 Email: <a href="mailto:vishwakarmaaditya471@gmail.com" className="text-yellow-400">vishwakarmaaditya471@gmail.com</a>
           </p>
           <p>
-            🐙 GitHub: <a href="https://github.com/yourusername" target="_blank" className="text-yellow-400">github.com/yourusername</a>
+            🐙 GitHub: <a href="https://github.com/Adii121" target="_blank" className="text-yellow-400">github.com/Adii121</a>
           </p>
           <p>
-            💼 LinkedIn: <a href="https://linkedin.com/in/yourusername" target="_blank" className="text-yellow-400">linkedin.com/in/yourusername</a>
+            💼 LinkedIn: <a href="www.linkedin.com/in/adityavishwakarma121" target="_blank" className="text-yellow-400">linkedin.com/in/adityavishwakarma121</a>
           </p>
         </div>
       </main>
