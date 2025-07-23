@@ -12,7 +12,7 @@ export default function PlayGame() {
       <main className="flex-grow flex justify-center items-center p-4">
         <div className="w-full max-w-5xl aspect-video border-4 border-yellow-400 rounded-lg overflow-hidden shadow-lg">
           <iframe
-            src={`http://localhost:5000/games/${folder}/index.html`}
+            src={`${process.env.REACT_APP_API_URL}/games/${folder}/index.html`}
             title="Play Game"
             width="100%"
             height="100%"

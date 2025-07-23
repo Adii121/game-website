@@ -43,7 +43,7 @@ export default function Home() {
               className="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:scale-105 transition-transform"
             >
               <img
-                src={`http://localhost:5000${game.image}`}
+                src={`${process.env.REACT_APP_API_URL}${game.image}`}
                 alt={game.title}
                 className="w-full h-40 object-cover"
               />
@@ -51,7 +51,7 @@ export default function Home() {
                 <h3 className="text-xl font-bold mb-2">{game.title}</h3>
                 <p className="text-sm text-gray-300 mb-4">{game.description}</p>
                 <a
-                  href={`http://localhost:5000${game.play_url}`}
+                  href={`${process.env.REACT_APP_API_URL}${game.play_url}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block text-center bg-yellow-400 text-black font-bold py-2 px-4 rounded hover:bg-yellow-300"
