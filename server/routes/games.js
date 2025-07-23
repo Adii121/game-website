@@ -5,6 +5,7 @@ const multer = require("multer");
 const path = require("path");
 const fs = require("fs");
 const unzipper = require("unzipper");
+const { exec } = require("child_process");
 
 // Configure Multer storage
 const storage = multer.diskStorage({
@@ -112,7 +113,29 @@ router.post(
           });
 
           await newGame.save();
-          res.status(201).json(newGame);
+
+          exec(
+            `
+            cd ${path.join(__dirname, "../")}
+            git add .
+            git commit -m "Added ${title} via admin upload"
+            git push origin main
+            `,
+            (err, stdout, stderr) => {
+              if (err) {
+                console.error("Git push failed:", err);
+                return res.status(201).json({
+                  message: "Game saved, but Git push failed.",
+                  game: newGame,
+                });
+              }
+              console.log("Git push successful:", stdout);
+              res.status(201).json({
+                message: "Game saved and deployed successfully!",
+                game: newGame,
+              });
+            }
+          );
         });
     } catch (err) {
       console.error(err);
