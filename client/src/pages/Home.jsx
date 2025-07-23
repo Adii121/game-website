@@ -7,7 +7,7 @@ export default function Home() {
   const [games, setGames] = useState([]);
 
   useEffect(() => {
-    fetch("/api/games")
+    fetch(`${process.env.REACT_APP_API_URL}/api/games`)
       .then((res) => res.json())
       .then((data) => setGames(data.slice(0, 3))) // show only first 3
       .catch((err) => console.error("Failed to fetch games:", err));

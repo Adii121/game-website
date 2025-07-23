@@ -12,7 +12,7 @@ export default function Admin() {
 
   // Fetch all games
   useEffect(() => {
-    fetch("/api/games")
+    fetch(`${process.env.REACT_APP_API_URL}/api/games`)
       .then((res) => res.json())
       .then((data) => setGames(data))
       .catch((err) => console.error("Failed to fetch games:", err));
@@ -33,7 +33,7 @@ export default function Admin() {
     formData.append("gameFile", gameFile);
 
     try {
-      const response = await fetch("/api/games", {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/games`, {
         method: "POST",
         body: formData,
       });
@@ -59,7 +59,7 @@ export default function Admin() {
     if (!window.confirm("Are you sure you want to delete this game?")) return;
 
     try {
-      const res = await fetch(`/api/games/${id}`, { method: "DELETE" });
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/api/games/${id}`, { method: "DELETE" });
       if (res.ok) {
         setGames(games.filter((g) => g._id !== id));
         setMessage("🗑 Game deleted successfully.");
