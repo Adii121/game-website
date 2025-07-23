@@ -44,7 +44,7 @@ export default function Home() {
               className="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:scale-105 transition-transform"
             >
               <img
-                src={`${API_URL}/images/${game.image}`}
+                src={`${API_URL}${game.image}`}
                 alt={game.title}
                 className="w-full h-40 object-cover"
               />

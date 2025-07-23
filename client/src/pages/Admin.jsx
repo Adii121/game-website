@@ -9,10 +9,11 @@ export default function Admin() {
   const [imageFile, setImageFile] = useState(null);
   const [gameFile, setGameFile] = useState(null);
   const [message, setMessage] = useState("");
+  const API_URL = import.meta.env.VITE_API_URL;
 
   // Fetch all games
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_API_URL}/api/games`)
+    fetch(`${API_URL}/api/games`)
       .then((res) => res.json())
       .then((data) => setGames(data))
       .catch((err) => console.error("Failed to fetch games:", err));
@@ -33,7 +34,7 @@ export default function Admin() {
     formData.append("gameFile", gameFile);
 
     try {
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/games`, {
+      const response = await fetch(`${API_URL}/api/games`, {
         method: "POST",
         body: formData,
       });
@@ -59,7 +60,7 @@ export default function Admin() {
     if (!window.confirm("Are you sure you want to delete this game?")) return;
 
     try {
-      const res = await fetch(`${process.env.REACT_APP_API_URL}/api/games/${id}`, { method: "DELETE" });
+      const res = await fetch(`${API_URL}/api/games/${id}`, { method: "DELETE" });
       if (res.ok) {
         setGames(games.filter((g) => g._id !== id));
         setMessage("🗑 Game deleted successfully.");
@@ -146,7 +147,7 @@ export default function Admin() {
               className="bg-gray-800 rounded-lg overflow-hidden shadow-lg"
             >
               <img
-                src={`${process.env.REACT_APP_API_URL}${game.image}`}
+                src={`${API_URL}${game.image}`}
                 alt={game.title}
                 className="w-full h-40 object-cover"
               />
@@ -155,7 +156,7 @@ export default function Admin() {
                 <p className="text-sm text-gray-300 mb-4">{game.description}</p>
                 <div className="flex justify-between space-x-2">
                   <a
-                    href={`${process.env.REACT_APP_API_URL}${game.play_url}`}
+                    href={`${API_URL}${game.play_url}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex-1 bg-yellow-400 text-black font-bold py-1 px-2 rounded hover:bg-yellow-300 text-center"
