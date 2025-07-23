@@ -2,9 +2,6 @@
 node_modules
 client/node_modules
 server/node_modules
-client/build
-server/public/images
-server/games
 .env
 .DS_Store
 npm-debug.log*

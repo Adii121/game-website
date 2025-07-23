@@ -10,4 +10,11 @@ export default defineConfig({
       "/api": "http://localhost:5000",
     },
   },
+  preview: {
+    port: 4173,
+    allowedHosts: [
+      "gamehub-uqe6.onrender.com", // Add your Render frontend domain
+      "localhost" // (optional for local testing)
+    ]
+  }
 })
